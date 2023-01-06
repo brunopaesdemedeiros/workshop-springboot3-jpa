@@ -35,7 +35,7 @@ public class UserService {
 	}
 
 	public void delete(Long id) {
-		try {	
+		try {
 			repository.deleteById(id);
 		} catch (EmptyResultDataAccessException e) {
 			throw new ResourceNotFoundException(id);
@@ -51,7 +51,7 @@ public class UserService {
 			return repository.save(entity);
 		} catch (EntityNotFoundException e) {
 			throw new ResourceNotFoundException(id);
-	}
+		}
 	}
 
 	private void updateData(User entity, User obj) {
